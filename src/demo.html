@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table user</title>
+
+    <script type="module" src="demo.js"></script>
+</head>
+<body>
+<button onclick="deleteUser()">Delete user</button>
+<button onclick="openForm()">Add user</button>
+
+
+<form id="userFormDemo" style="margin-top: 10px; display: none;">
+<!--    <label>Id:</label>-->
+<!--    <input type="text" id="id">-->
+<!--    <br>-->
+
+    <label>Họ và tên:</label>
+    <input type="text" id="name">
+    <br>
+
+    <label>Năm sinh:</label>
+    <input type="text" id="birthYear">
+    <br>
+
+    <label>Province:</label>
+    <input type="text" id="province">
+    <br>
+
+    <label>City:</label>
+    <input type="text" id="city">
+
+    <br>
+    <button type="button" onclick="addUser()">Add</button>
+</form>
+
+<h1> List user demo</h1>
+<input type="text"  name="search" id="search">
+<button onclick="searchUser()">Tìm kiếm</button>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Birth year</th>
+        <th>Province</th>
+        <th>City</th>
+        <th>Action</th>
+    </tr>
+    <tbody id="userListDemo">
+
+    </tbody>
+</table>
+
+</body>
+</html>
