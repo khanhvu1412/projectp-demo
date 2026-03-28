@@ -12,9 +12,9 @@
 
 
 <form id="userFormDemo" style="margin-top: 10px; display: none;">
-<!--    <label>Id:</label>-->
-<!--    <input type="text" id="id">-->
-<!--    <br>-->
+    <!--    <label>Id:</label>-->
+    <!--    <input type="text" id="id">-->
+    <!--    <br>-->
 
     <label>Họ và tên:</label>
     <input type="text" id="name">
@@ -32,12 +32,14 @@
     <input type="text" id="city">
 
     <br>
-    <button type="button" onclick="addUser()">Add</button>
+    <button type="button" onclick="updateUser()">Submit</button>
 </form>
 
 <h1> List user demo</h1>
-<input type="text"  name="search" id="search">
-<button onclick="searchUser()">Tìm kiếm</button>
+<!--<input type="text"  name="search" id="search">-->
+<label>
+    <input id="searchUser" placeholder="Nhập từ khoá tìm kiếm">
+</label>
 <table border="1">
     <tr>
         <th>Id</th>
@@ -45,12 +47,38 @@
         <th>Birth year</th>
         <th>Province</th>
         <th>City</th>
-        <th>Action</th>
+        <th colspan="2" rowspan="2">Action</th>
+    </tr>
+    <tr>
+        <td><input type="text" id="searchId" oninput="searchUserBy()"></td>
+        <td><input type="text" id="searchName" oninput="searchUserBy()"></td>
+        <td><input type="number" id="searchBirthYear" oninput="searchUserBy()"></td>
+        <td><input type="text" id="searchProvince" oninput="searchUserBy()"></td>
+        <td><input type="text" id="searchCity" oninput="searchUserBy()"></td>
     </tr>
     <tbody id="userListDemo">
 
     </tbody>
 </table>
+
+<div style="margin-top: 20px">
+    <button onclick="previousPage()">Previous</button>
+
+    <!-- input nhập trang -->
+    <input
+            type="number"
+            id="currentPage"
+            value="1"
+            min="1"
+            style="width: 40px; text-align: center;"
+            oninput="goToPage()"
+    >
+
+    <!-- tổng số trang -->
+    <span>/ <span id="totalPage">10</span></span>
+
+    <button onclick="nextPage()">Next</button>
+</div>
 
 </body>
 </html>
